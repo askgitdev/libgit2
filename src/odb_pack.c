@@ -727,7 +727,7 @@ static int pack_backend__writepack(struct git_odb_writepack **out,
 	GIT_ERROR_CHECK_ALLOC(writepack);
 
 	if (git_indexer_new(&writepack->indexer,
-		backend->pack_folder, 0, odb, &opts) < 0) {
+		backend->pack_folder, 0644, odb, &opts) < 0) {
 		git__free(writepack);
 		return -1;
 	}
